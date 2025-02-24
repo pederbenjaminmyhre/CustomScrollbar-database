@@ -80,5 +80,16 @@
     <Build Include="dbo\User Defined Types\TreeSegmentType.sql" />
     <Build Include="dbo\Synonyms\ActiveAnalyticalTable.sql" />
     <Build Include="dbo\Synonyms\InactiveAnalyticalTable.sql" />
+    <Build Include="dbo\Tables\QueryRequests.sql" />
+    <Build Include="dbo\Tables\LogTreeSegmentTable.sql" />
+    <Build Include="dbo\Tables\LogSql.sql" />
+    <Build Include="dbo\Tables\Log2.sql" />
+    <Build Include="dbo\Tables\Log1.sql" />
+    <Build Include="dbo\Stored Procedures\SaveSegmentTable.sql" />
+    <Build Include="dbo\Stored Procedures\printLatestEventLogId.sql" />
+    <Build Include="dbo\Stored Procedures\PrintEventLogId.sql" />
+    <Build Include="dbo\Stored Procedures\print_treeSegments2.sql" />
+    <Build Include="dbo\Stored Procedures\print_queryRequests2.sql" />
+    <Build Include="dbo\User Defined Types\SegmentTableType.sql" />
   </ItemGroup>
 </Project>
