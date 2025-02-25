@@ -8,7 +8,7 @@ BEGIN
     SET NOCOUNT ON;
 
 	-- declare variables
-    DECLARE @frozenColumnList NVARCHAR(MAX) = 'ID, ParentID, Name, CustomSort, HasChildren, ChildCount' + CHAR(13) + CHAR(10);
+    DECLARE @frozenColumnList NVARCHAR(MAX) = 'ID, ParentID, Name, CustomSort, HasChildren, ChildCount';
     DECLARE @scrollableColumnList NVARCHAR(MAX) = '';
     DECLARE @combinedColumnList NVARCHAR(MAX);
     DECLARE @sql NVARCHAR(MAX) = '';
@@ -32,7 +32,7 @@ BEGIN
 
     -- Combine frozen column list and scrollable column list into a combined column list
     SET @combinedColumnList = @frozenColumnList + 
-        CASE WHEN @scrollableColumnList <> '' THEN ', ' + @scrollableColumnList ELSE '' END;
+        CASE WHEN @scrollableColumnList <> '' THEN ',' + CHAR(13) + CHAR(10) + CHAR(9) + @scrollableColumnList ELSE '' END;
 
     -- Get query requests
     DECLARE @parentId INT, @firstRecordNumber INT, @lastRecordNumber INT, @treeLevel INT;
@@ -47,7 +47,7 @@ BEGIN
     WHILE @@FETCH_STATUS = 0
     BEGIN
         -- Append UNION ALL if this is not the first query
-        IF @sql <> '' SET @sql = @sql + ' UNION ALL ';
+        IF @sql <> '' SET @sql = @sql + CHAR(13) + CHAR(10) + '	UNION ALL	' + CHAR(13) + CHAR(10);
 
         -- Build the select statement
         SET @sql = @sql + 
