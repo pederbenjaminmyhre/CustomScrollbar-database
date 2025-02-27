@@ -91,5 +91,6 @@
     <Build Include="dbo\Stored Procedures\print_treeSegments2.sql" />
     <Build Include="dbo\Stored Procedures\print_queryRequests2.sql" />
     <Build Include="dbo\User Defined Types\SegmentTableType.sql" />
+    <Build Include="dbo\Stored Procedures\truncateLogTables.sql" />
   </ItemGroup>
 </Project>
